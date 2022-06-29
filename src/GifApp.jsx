@@ -6,7 +6,7 @@ import { GifGrid } from "./components/GifGrid";
  * Componente principal de la aplicacion
  */
 export const GifApp = () => {
-  const [categories, setCategories] = useState(["One Punch", "Dragon Ball"]);
+  const [categories, setCategories] = useState(["One Punch"]);
 
   // console.log(">> categories", categories);
 
