@@ -10,7 +10,8 @@ export const GifApp = () => {
   // console.log(">> categories", categories);
 
   const handleAddCategory = (newCategory) => {
-    setCategories([newCategory, ...categories]);
+    if (categories.includes(newCategory.toLowerCase())) return;
+    setCategories([newCategory.toLowerCase(), ...categories]);
   };
 
   return (
@@ -28,7 +29,7 @@ export const GifApp = () => {
       {/* LISTADO */}
       <ol>
         {categories.map((category) => {
-          return <li key={category}>{category}</li>;
+          return <li key={category}>{category.toUpperCase()}</li>;
         })}
       </ol>
     </>
