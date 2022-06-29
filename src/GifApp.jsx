@@ -1,3 +1,6 @@
 export const GifApp = () => {
-  return <div>GifApp</div>;
+  return (
+    <div>GifApp</div>
+    
+  );
 };
