@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { AddCategory } from "./components/AddCategory";
+import { GifGrid } from "./components/GifGrid";
 
 /**
  * Componente principal de la aplicacion
@@ -23,14 +24,14 @@ export const GifApp = () => {
       {/* DE ESTA FORMA SE LE PASA EL setState AL COMPONENTE HIJO */}
       {/* <AddCategory setCategories={setCategories} />  */}
       {/* DE ESTA FORMA SE ATRAPA DESDE EL PADRE UN EVENTO QUE HA EMITIDO EL COMPONENTE HIJO */}
-      <AddCategory onAddCategory={(event) => handleAddCategory(event)}/>
+      <AddCategory onAddCategory={(event) => handleAddCategory(event)} />
       {/* CODIGO EQUIVALENTE */}
       {/* <AddCategory onAddCategory={handleAddCategory}/> */}
       {/* LISTADO */}
       <ol>
-        {categories.map((category) => {
-          return <li key={category}>{category.toUpperCase()}</li>;
-        })}
+        {categories.map((category) => (
+          <GifGrid key={category} category={category} />
+        ))}
       </ol>
     </>
   );
