@@ -1,11 +1,18 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { getGifs } from "../helpers/getGifs";
 
 export const GifGrid = ({ category }) => {
-  useEffect(() => {
-    getGifs(category);
+  const [gifs, setGifs] = useState([]);
 
-  }, []); // ARRRAY DE DEPENDENCIAS => SI ESTA VACIO SE EJECUTA SOLO LA PRIMERA VEZ EL CONTENIDO DENTRO
+  const setGifList = async () => {
+    const gifList = await getGifs(category)
+    setGifs(gifList)
+  }
+
+  useEffect(() => {
+    setGifList();
+  }, []); 
+  // ARRRAY DE DEPENDENCIAS => SI ESTA VACIO SE EJECUTA SOLO LA PRIMERA VEZ EL CONTENIDO DENTRO
   // DEL CALLBACK DEL useEffect, SI TIENE EL VALOR DE ALGUNA VARIABLE, SE EJECUTA LA PRIMERA VEZ Y CADA
   // VEZ QUE SE DETECTE ALGUN CAMBIO DE ESTA VARIABLE
   /////// IMPORTANTE ///////////
@@ -16,7 +23,13 @@ export const GifGrid = ({ category }) => {
   return (
     <>
       <h3>{category}</h3>
-      <p>Hola mundo</p>
+      <ol>
+        {
+          gifs.map(({id, title}) => (
+            <li key={id}>{title}</li>
+          ))
+        }
+      </ol>
     </>
   );
 };
