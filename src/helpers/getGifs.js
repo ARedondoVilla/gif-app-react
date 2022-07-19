@@ -1,6 +1,6 @@
 // USANDO node.js 18
 export const getGifs = async (category) => {
-const url = `https://api.giphy.com/v1/gifs/search?api_key=BvnyASmMec9Gui3EpVaTBzWVJC0lME37&limit=20&q=${category}`;
+const url = `https://api.giphy.com/v1/gifs/search?api_key=BvnyASmMec9Gui3EpVaTBzWVJC0lME37&limit=10&q=${category}`;
   const resp = await fetch(url);
   const {data} = await resp.json();
   // console.log('>> resp API', data);
@@ -12,7 +12,7 @@ const url = `https://api.giphy.com/v1/gifs/search?api_key=BvnyASmMec9Gui3EpVaTBz
     };
   });
 
-  console.log(">> gifsList", gifsList);
+  // console.log(">> gifsList", gifsList);
   return gifsList;
 };
 
