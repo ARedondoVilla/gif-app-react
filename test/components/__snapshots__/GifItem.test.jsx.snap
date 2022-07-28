@@ -7,7 +7,7 @@ exports[`Pruebas en GifItem Component Debe hacer match con el snapshot 1`] = `
   >
     <img
       alt="Titulo"
-      src="url"
+      src="https://picsum.photos/id/237/200/300"
     />
     <p>
       Titulo
