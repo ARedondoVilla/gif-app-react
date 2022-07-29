@@ -13,7 +13,7 @@ describe("Pruebas en GifItem Component", () => {
     render(<GifItem title={title} url={url} />);
     // screen.debug(); // IMPRIME EN CONSOLA EL HTML DEL COMPONENTE
     // CON screen PODEMOS TOMAR EL CONTENIDO DEL HTML PARA REALIZAR PRUEBAS
-    console.log('>> src de la imagen', screen.getByRole('img').src);
+    // console.log('>> src de la imagen', screen.getByRole('img').src);
     // expect(screen.getByRole('img').src).toBe(url);
     const {src, alt} = screen.getByRole('img')
     expect(src).toBe(url);

@@ -21,7 +21,7 @@ describe('Pruebas en <AddCategory />', () => {
 
     fireEvent.input(inputTest, {target: {value: valueTest}})
     fireEvent.submit(formTest); // LIMPIA EL VALOR DEL value EN EL input
-    screen.debug();
+    // screen.debug();
 
     expect(inputTest.value).toBe('');
     expect(onAddCategoryTest).toHaveBeenCalled();
